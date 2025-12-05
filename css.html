@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Curso Front-End</title>
+    <link rel="stylesheet" href="arquivo.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>🎨 Módulo CSS</h1>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+</header>
+
+<nav class="menu" id="menu">
+    <ul>
+        <li><a href="index.html">Introdução</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="js.html">JavaScript</a></li>
+        <li><a href="projeto.html">Projeto Final</a></li>
+    </ul>
+</nav>
+
+<div class="rocket-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/809/809522.png" class="rocket" alt="Foguete">
+</div>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>🎯 O que é CSS?</h2>
+        <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem usada para estilizar elementos HTML. Com CSS você controla cores, fontes, tamanhos, espaçamentos e layouts.</p>
+        <p><em>Se HTML é o esqueleto, CSS é a pele e roupas! Deixa tudo bonito!</em></p>
+    </div>
+
+    <div class="card">
+        <h2>1️⃣ Três Formas de Usar CSS</h2>
+        <p><strong>1. CSS Inline (na tag):</strong></p>
+        <pre><code>&lt;h1 style="color: blue; font-size: 30px;"&gt;Título Azul&lt;/h1&gt;</code></pre>
+        
+        <p><strong>2. CSS Interno (na head):</strong></p>
+        <pre><code>&lt;style&gt;
+    h1 {
+        color: blue;
+        font-size: 30px;
+    }
+&lt;/style&gt;</code></pre>
+        
+        <p><strong>3. CSS Externo (arquivo separado) - RECOMENDADO!</strong></p>
+        <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>2️⃣ Seletores CSS Básicos</h2>
+        <p><strong>Por Tag:</strong></p>
+        <pre><code>p {
+    color: black;
+}</code></pre>
+        
+        <p><strong>Por Class (múltiplos elementos):</strong></p>
+        <pre><code>.destaque {
+    background-color: yellow;
+}</code></pre>
+        
+        <p><strong>Por ID (elemento único):</strong></p>
+        <pre><code>#principal {
+    font-size: 24px;
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>3️⃣ Propriedades CSS Essenciais</h2>
+        <ul>
+            <li><code>color</code> - Cor do texto</li>
+            <li><code>background-color</code> - Cor de fundo</li>
+            <li><code>font-size</code> - Tamanho da fonte</li>
+            <li><code>font-family</code> - Tipo de letra</li>
+            <li><code>font-weight</code> - Espessura da letra (bold, normal)</li>
+            <li><code>text-align</code> - Alinhamento (left, center, right)</li>
+            <li><code>padding</code> - Espaço interno</li>
+            <li><code>margin</code> - Espaço externo</li>
+            <li><code>border</code> - Borda</li>
+            <li><code>width</code> e <code>height</code> - Largura e altura</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4️⃣ Exemplo Prático - Estilizando um Parágrafo</h2>
+        <p><strong>HTML:</strong></p>
+        <pre><code>&lt;p class="destaque"&gt;Este é um texto especial&lt;/p&gt;</code></pre>
+        
+        <p><strong>CSS:</strong></p>
+        <pre><code>.destaque {
+    color: white;
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>5️⃣ Box Model - Entenda o Espacejamento</h2>
+        <p>Cada elemento tem 4 camadas:</p>
+        <pre><code>┌─────────────────────┐
+│     MARGIN          │  Espaço externo
+│  ┌─────────────────┐│
+│  │    BORDER       ││  Borda
+│  │  ┌─────────────┐││
+│  │  │   PADDING   │││ Espaço interno
+│  │  │ ┌─────────┐ │││
+│  │  │ │ CONTENT │ │││ Conteúdo
+│  │  │ └─────────┘ │││
+│  │  └─────────────┘││
+│  └─────────────────┘│
+└─────────────────────┘</code></pre>
+        <p><strong>Exemplo:</strong></p>
+        <pre><code>.caixa {
+    margin: 20px;      /* espaço externo */
+    border: 2px solid; /* borda */
+    padding: 15px;     /* espaço interno */
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>6️⃣ Cores em CSS</h2>
+        <p><strong>Nomes:</strong> <code>color: red;</code></p>
+        <p><strong>Hexadecimal:</strong> <code>color: #FF5733;</code></p>
+        <p><strong>RGB:</strong> <code>color: rgb(255, 87, 51);</code></p>
+        <p><strong>RGBA (com transparência):</strong> <code>color: rgba(255, 87, 51, 0.5);</code></p>
+    </div>
+
+    <div class="card">
+        <h2>7️⃣ Flexbox - Layout Moderno</h2>
+        <p><strong>Flexbox permite criar layouts responsivos facilmente:</strong></p>
+        <pre><code>.container {
+    display: flex;
+    justify-content: center;  /* centra horizontalmente */
+    align-items: center;      /* centra verticalmente */
+    gap: 20px;               /* espaço entre itens */
+}
+
+.item {
+    flex: 1;  /* itens ocupam espaço igual */
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>8️⃣ Hover e Transições</h2>
+        <p><strong>Mude o estilo ao passar o mouse:</strong></p>
+        <pre><code>.botao {
+    background-color: blue;
+    transition: 0.3s;  /* transição suave */
+}
+
+.botao:hover {
+    background-color: darkblue;
+    transform: scale(1.1);
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>9️⃣ Media Queries - Responsividade</h2>
+        <p><strong>Adapte o layout para diferentes telas:</strong></p>
+        <pre><code>/* Estilos para desktop */
+.container {
+    width: 1000px;
+}
+
+/* Estilos para tablets */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Estilos para celulares */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>✨ Dicas e Boas Práticas</h2>
+        <ul>
+            <li>✅ Use classes e IDs significativos</li>
+            <li>✅ Organize CSS por seções (comentários)</li>
+            <li>✅ Use variáveis CSS (custom properties)</li>
+            <li>✅ Mobile First: estilo mobile, depois desktop</li>
+            <li>✅ Evite cores muito próximas (contraste)</li>
+            <li>✅ Use Flexbox ou Grid para layouts</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🚀 Próximo Passo: JavaScript</h2>
+        <p>Agora que seu site está bonito, é hora de deixar <strong>interativo</strong> com JavaScript!</p>
+        <p><a href="js.html" class="btn">Ir para JavaScript →</a></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

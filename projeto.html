@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final - Curso Front-End</title>
+    <link rel="stylesheet" href="arquivo.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>🎓 Projeto Final</h1>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+</header>
+
+<nav class="menu" id="menu">
+    <ul>
+        <li><a href="index.html">Introdução</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="js.html">JavaScript</a></li>
+        <li><a href="projeto.html">Projeto Final</a></li>
+    </ul>
+</nav>
+
+<div class="rocket-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/809/809522.png" class="rocket" alt="Foguete">
+</div>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>🎯 Seu Projeto: TODO List Interativa</h2>
+        <p>Parabéns por chegar até aqui! Agora você vai criar uma aplicação web funcional: <strong>Uma Lista de Tarefas (TODO List)</strong>!</p>
+        <p>Este projeto combina <strong>HTML, CSS e JavaScript</strong> para criar algo real e útil.</p>
+    </div>
+
+    <div class="card">
+        <h2>📋 Funcionalidades da Aplicação</h2>
+        <ul>
+            <li>✅ Adicionar novas tarefas</li>
+            <li>✅ Marcar tarefas como concluídas</li>
+            <li>✅ Deletar tarefas</li>
+            <li>✅ Salvar tarefas no navegador (localStorage)</li>
+            <li>✅ Design responsivo</li>
+            <li>✅ Animações suaves</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>1️⃣ Estrutura HTML</h2>
+        <p><strong>Crie um arquivo chamado "todo.html":</strong></p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Minha TODO List&lt;/title&gt;
+    &lt;link rel="stylesheet" href="todo.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;📝 Minhas Tarefas&lt;/h1&gt;
+        
+        &lt;div class="input-container"&gt;
+            &lt;input 
+                type="text" 
+                id="inputTarefa" 
+                placeholder="Digite uma nova tarefa..."
+            &gt;
+            &lt;button id="btnAdicionar"&gt;Adicionar&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;ul id="listaTarefas" class="lista"&gt;
+            &lt;!-- Tarefas aparecem aqui --&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="todo.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>2️⃣ Estilos CSS</h2>
+        <p><strong>Crie um arquivo "todo.css":</strong></p>
+        <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#inputTarefa {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#inputTarefa:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#btnAdicionar {
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#btnAdicionar:hover {
+    background: #764ba2;
+}
+
+.lista {
+    list-style: none;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tarefa.concluida {
+    background: #e8f5e9;
+}
+
+.tarefa.concluida span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.checkbox {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.texto {
+    flex: 1;
+    color: #333;
+}
+
+.btnDeletar {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btnDeletar:hover {
+    background: #ee5a52;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>3️⃣ Lógica JavaScript</h2>
+        <p><strong>Crie um arquivo "todo.js":</strong></p>
+        <pre><code>// Elementos do DOM
+const inputTarefa = document.getElementById("inputTarefa");
+const btnAdicionar = document.getElementById("btnAdicionar");
+const listaTarefas = document.getElementById("listaTarefas");
+
+// Array para armazenar tarefas
+let tarefas = [];
+
+// Carregar tarefas do localStorage
+function carregarTarefas() {
+    const dados = localStorage.getItem("minhasTarefas");
+    if (dados) {
+        tarefas = JSON.parse(dados);
+        renderizarTarefas();
+    }
+}
+
+// Salvar tarefas no localStorage
+function salvarTarefas() {
+    localStorage.setItem("minhasTarefas", JSON.stringify(tarefas));
+}
+
+// Adicionar nova tarefa
+function adicionarTarefa() {
+    const texto = inputTarefa.value.trim();
+    
+    if (texto === "") {
+        alert("Digite algo!");
+        return;
+    }
+    
+    tarefas.push({
+        id: Date.now(),
+        texto: texto,
+        concluida: false
+    });
+    
+    inputTarefa.value = "";
+    salvarTarefas();
+    renderizarTarefas();
+}
+
+// Deletar tarefa
+function deletarTarefa(id) {
+    tarefas = tarefas.filter(t => t.id !== id);
+    salvarTarefas();
+    renderizarTarefas();
+}
+
+// Marcar como concluída
+function marcarConcluida(id) {
+    const tarefa = tarefas.find(t => t.id === id);
+    if (tarefa) {
+        tarefa.concluida = !tarefa.concluida;
+        salvarTarefas();
+        renderizarTarefas();
+    }
+}
+
+// Renderizar tarefas na tela
+function renderizarTarefas() {
+    listaTarefas.innerHTML = "";
+    
+    tarefas.forEach(tarefa => {
+        const li = document.createElement("li");
+        li.className = `tarefa ${tarefa.concluida ? "concluida" : ""}`;
+        
+        li.innerHTML = `
+            &lt;input 
+                type="checkbox" 
+                class="checkbox"
+                ${tarefa.concluida ? "checked" : ""}
+                onchange="marcarConcluida(${tarefa.id})"
+            &gt;
+            &lt;span class="texto"&gt;${tarefa.texto}&lt;/span&gt;
+            &lt;button class="btnDeletar" onclick="deletarTarefa(${tarefa.id})"&gt;
+                Deletar
+            &lt;/button&gt;
+        `;
+        
+        listaTarefas.appendChild(li);
+    });
+}
+
+// Event listeners
+btnAdicionar.addEventListener("click", adicionarTarefa);
+inputTarefa.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        adicionarTarefa();
+    }
+});
+
+// Carregar tarefas ao abrir a página
+carregarTarefas();</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Desafio Extra: Melhorias Futuras</h2>
+        <ul>
+            <li>🔴 Adicione categorias de tarefas</li>
+            <li>🔴 Adicione data/hora para cada tarefa</li>
+            <li>🔴 Crie um filtro (Ativas, Concluídas, Todas)</li>
+            <li>🔴 Adicione ícones interessantes</li>
+            <li>🔴 Implemente modo claro/escuro</li>
+            <li>🔴 Adicione estatísticas (tarefas concluídas)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>✅ Checklist de Aprendizado</h2>
+        <div style="background: #f0f0f0; padding: 15px; border-radius: 8px;">
+            <label><input type="checkbox" class="check" id="check1"> Entendo a estrutura HTML</label><br>
+            <label><input type="checkbox" class="check" id="check2"> Sei estilizar com CSS</label><br>
+            <label><input type="checkbox" class="check" id="check3"> Consigo manipular o DOM</label><br>
+            <label><input type="checkbox" class="check" id="check4"> Sei usar eventos</label><br>
+            <label><input type="checkbox" class="check" id="check5"> Entendo localStorage</label><br>
+            <label><input type="checkbox" class="check" id="check6"> Criei meu primeiro projeto!</label><br>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🚀 Próximos Passos na Carreira Front-End</h2>
+        <ul>
+            <li>📚 Estude Git e GitHub para versionamento</li>
+            <li>📚 Aprenda React ou Vue.js para projetos maiores</li>
+            <li>📚 Estude API REST e como fazer requisições</li>
+            <li>📚 Aprenda Webpack e ferramentas de build</li>
+            <li>📚 Estude testes automatizados</li>
+            <li>📚 Crie um portfólio com seus melhores projetos</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>💪 Você conseguiu!</h2>
+        <p>Parabéns por completar este curso! Você agora tem as habilidades básicas para criar sites interativos!</p>
+        <p><strong>Próximos passos:</strong></p>
+        <ul>
+            <li>✅ Crie novos projetos</li>
+            <li>✅ Pratique constantemente</li>
+            <li>✅ Estude novos frameworks</li>
+            <li>✅ Contribua em projetos open-source</li>
+            <li>✅ Construa seu portfólio</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📖 Recursos Úteis</h2>
+        <ul>
+            <li>📎 <a href="https://developer.mozilla.org/pt-BR" target="_blank">MDN Web Docs</a> - Documentação oficial</li>
+            <li>📎 <a href="https://www.youtube.com/c/CursoemVideo" target="_blank">Curso em Vídeo</a> - Excelente canal</li>
+            <li>📎 <a href="https://codepen.io" target="_blank">CodePen</a> - Compartilhe códigos</li>
+            <li>📎 <a href="https://github.com" target="_blank">GitHub</a> - Versione seu código</li>
+            <li>📎 <a href="https://caniuse.com" target="_blank">Can I Use</a> - Compatibilidade de recursos</li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Carregar checkboxes do progresso
+    document.querySelectorAll(".check").forEach(check => {
+        const id = check.id;
+        if (localStorage.getItem(id) === "true") {
+            check.checked = true;
+        }
+        check.addEventListener("change", () => {
+            localStorage.setItem(id, check.checked);
+        });
+    });
+</script>
+</body>
+</html>

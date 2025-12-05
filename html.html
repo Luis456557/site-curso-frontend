@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Curso Front-End</title>
+    <link rel="stylesheet" href="arquivo.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>📘 Módulo HTML</h1>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+</header>
+
+<nav class="menu" id="menu">
+    <ul>
+        <li><a href="index.html">Introdução</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="js.html">JavaScript</a></li>
+        <li><a href="projeto.html">Projeto Final</a></li>
+    </ul>
+</nav>
+
+<div class="rocket-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/809/809522.png" class="rocket" alt="Foguete">
+</div>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>🎯 O que é HTML?</h2>
+        <p><strong>HTML (HyperText Markup Language)</strong> é a linguagem de marcação usada para criar a estrutura de páginas web. Ela define o conteúdo, organizando textos, imagens, links e outros elementos através de <strong>tags</strong>.</p>
+        <p><em>HTML é como o esqueleto de um site - define a estrutura, mas sem CSS não tem visual bonito!</em></p>
+    </div>
+
+    <div class="card">
+        <h2>1️⃣ Estrutura Básica do HTML</h2>
+        <p>Todo arquivo HTML começa com uma estrutura padrão:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Conteúdo aqui --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p><strong>Entenda cada parte:</strong></p>
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code> - Declara que é HTML5</li>
+            <li><code>&lt;html&gt;</code> - Tag raiz do documento</li>
+            <li><code>&lt;head&gt;</code> - Metadados (título, charset, links)</li>
+            <li><code>&lt;body&gt;</code> - Conteúdo visível da página</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2️⃣ Tags Essenciais do HTML</h2>
+        <p>As tags mais importantes para começar:</p>
+        <ul>
+            <li><code>&lt;h1&gt; a &lt;h6&gt;</code> - Títulos (h1 é o maior)</li>
+            <li><code>&lt;p&gt;</code> - Parágrafo de texto</li>
+            <li><code>&lt;img&gt;</code> - Imagem</li>
+            <li><code>&lt;a href=""&gt;</code> - Link</li>
+            <li><code>&lt;div&gt;</code> - Container genérico</li>
+            <li><code>&lt;button&gt;</code> - Botão clicável</li>
+            <li><code>&lt;input&gt;</code> - Campo de entrada</li>
+            <li><code>&lt;form&gt;</code> - Formulário</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>3️⃣ Exemplo Prático - Criando uma Página</h2>
+        <p><strong>Copie e cole este código em um arquivo HTML:</strong></p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é meu primeiro site.&lt;/p&gt;
+    &lt;a href="https://google.com"&gt;Clique aqui&lt;/a&gt;
+    &lt;button&gt;Meu Botão&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>✅ Salve com extensão <strong>.html</strong> e abra no navegador!</p>
+    </div>
+
+    <div class="card">
+        <h2>4️⃣ Atributos Importantes</h2>
+        <p>Atributos adicionam informações às tags:</p>
+        <ul>
+            <li><code>id=""</code> - Identificador único</li>
+            <li><code>class=""</code> - Classe para estilos</li>
+            <li><code>src=""</code> - Fonte da imagem/script</li>
+            <li><code>href=""</code> - Destino do link</li>
+            <li><code>alt=""</code> - Texto alternativo para imagens</li>
+            <li><code>placeholder=""</code> - Dica de preenchimento</li>
+        </ul>
+        <p><strong>Exemplo:</strong> <code>&lt;img src="foto.jpg" alt="Minha foto" class="imagem"&gt;</code></p>
+    </div>
+
+    <div class="card">
+        <h2>5️⃣ Elementos Semânticos</h2>
+        <p>Tags semânticas descrevem melhor o significado do conteúdo:</p>
+        <ul>
+            <li><code>&lt;header&gt;</code> - Cabeçalho da página</li>
+            <li><code>&lt;nav&gt;</code> - Menu de navegação</li>
+            <li><code>&lt;section&gt;</code> - Seção do conteúdo</li>
+            <li><code>&lt;article&gt;</code> - Artigo completo</li>
+            <li><code>&lt;aside&gt;</code> - Barra lateral</li>
+            <li><code>&lt;footer&gt;</code> - Rodapé</li>
+        </ul>
+        <p>Usar tags semânticas melhora a <strong>acessibilidade</strong> e <strong>SEO</strong>!</p>
+    </div>
+
+    <div class="card">
+        <h2>6️⃣ Listas em HTML</h2>
+        <p><strong>Lista não-ordenada (com pontos):</strong></p>
+        <pre><code>&lt;ul&gt;
+    &lt;li&gt;Primeiro item&lt;/li&gt;
+    &lt;li&gt;Segundo item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <p><strong>Lista ordenada (com números):</strong></p>
+        <pre><code>&lt;ol&gt;
+    &lt;li&gt;Primeiro passo&lt;/li&gt;
+    &lt;li&gt;Segundo passo&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>7️⃣ Formulários Básicos</h2>
+        <p><strong>Exemplo de um formulário simples:</strong></p>
+        <pre><code>&lt;form&gt;
+    &lt;label&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" placeholder="Digite seu nome"&gt;
+    &lt;br&gt;
+    
+    &lt;label&gt;Email:&lt;/label&gt;
+    &lt;input type="email" placeholder="seu@email.com"&gt;
+    &lt;br&gt;
+    
+    &lt;label&gt;Mensagem:&lt;/label&gt;
+    &lt;textarea rows="4"&gt;&lt;/textarea&gt;
+    &lt;br&gt;
+    
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>✨ Dicas e Boas Práticas</h2>
+        <ul>
+            <li>✅ Use indentação para melhor legibilidade</li>
+            <li>✅ Sempre feche suas tags</li>
+            <li>✅ Use nomes descritivos para classes e IDs</li>
+            <li>✅ Adicione <code>alt=""</code> em todas as imagens</li>
+            <li>✅ Use semântica HTML5 sempre que possível</li>
+            <li>✅ Evite usar múltiplos <code>&lt;div&gt;</code> aninhados</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🚀 Próximo Passo: CSS</h2>
+        <p>Agora que você sabe a estrutura do HTML, é hora de deixar bonito com <strong>CSS</strong>!</p>
+        <p><a href="css.html" class="btn">Ir para CSS →</a></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

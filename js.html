@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Curso Front-End</title>
+    <link rel="stylesheet" href="arquivo.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>⚙️ Módulo JavaScript</h1>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+</header>
+
+<nav class="menu" id="menu">
+    <ul>
+        <li><a href="index.html">Introdução</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="js.html">JavaScript</a></li>
+        <li><a href="projeto.html">Projeto Final</a></li>
+    </ul>
+</nav>
+
+<div class="rocket-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/809/809522.png" class="rocket" alt="Foguete">
+</div>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>🎯 O que é JavaScript?</h2>
+        <p><strong>JavaScript</strong> é a linguagem de programação que torna sites interativos. Com JavaScript você pode responder a cliques, validar formulários, animar elementos e criar funcionalidades dinâmicas.</p>
+        <p><em>Se HTML é a estrutura e CSS é o design, JavaScript é a inteligência!</em></p>
+    </div>
+
+    <div class="card">
+        <h2>1️⃣ Onde Colocar JavaScript</h2>
+        <p><strong>No final da tag body (recomendado):</strong></p>
+        <pre><code>&lt;body&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        
+        <p><strong>Ou dentro da tag script:</strong></p>
+        <pre><code>&lt;script&gt;
+    console.log("Olá, Mundo!");
+&lt;/script&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>2️⃣ Variáveis e Tipos de Dados</h2>
+        <p><strong>Declarando variáveis:</strong></p>
+        <pre><code>let nome = "João";           // texto
+let idade = 25;              // número
+let ativo = true;            // booleano (verdadeiro/falso)
+let lista = [1, 2, 3];       // array (lista)
+let objeto = { nome: "Ana" }; // objeto</code></pre>
+        
+        <p><strong>Diferença entre let, const e var:</strong></p>
+        <ul>
+            <li><code>let</code> - Use principalmente (escopo local)</li>
+            <li><code>const</code> - Para valores que não mudam</li>
+            <li><code>var</code> - Evite (antiga)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>3️⃣ Operações Básicas</h2>
+        <p><strong>Matemática:</strong></p>
+        <pre><code>let a = 10;
+let b = 5;
+console.log(a + b);  // 15
+console.log(a - b);  // 5
+console.log(a * b);  // 50
+console.log(a / b);  // 2</code></pre>
+        
+        <p><strong>Comparação:</strong></p>
+        <pre><code>console.log(10 > 5);   // true
+console.log(10 == 10); // true
+console.log(10 === 10); // true (tipo e valor)
+console.log(10 !== 5); // true (diferente)</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>4️⃣ Condições (IF e ELSE)</h2>
+        <pre><code>let idade = 18;
+
+if (idade >= 18) {
+    console.log("Você é maior de idade");
+} else if (idade >= 16) {
+    console.log("Você é adolescente");
+} else {
+    console.log("Você é criança");
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>5️⃣ Loops (FOR)</h2>
+        <p><strong>Repetir código múltiplas vezes:</strong></p>
+        <pre><code>// For tradicional
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // 0, 1, 2, 3, 4
+}
+
+// For com array
+let frutas = ["maçã", "banana", "laranja"];
+for (let fruta of frutas) {
+    console.log(fruta);
+}</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>6️⃣ Funções</h2>
+        <p><strong>Blocos de código reutilizáveis:</strong></p>
+        <pre><code>// Declarar uma função
+function saudacao(nome) {
+    console.log("Olá, " + nome);
+}
+
+// Chamar a função
+saudacao("Maria");  // Olá, Maria
+
+// Função com retorno
+function soma(a, b) {
+    return a + b;
+}
+
+let resultado = soma(5, 3);
+console.log(resultado);  // 8</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>7️⃣ Manipular o HTML (DOM)</h2>
+        <p><strong>Mudar conteúdo de elementos:</strong></p>
+        <pre><code>// Pegar elemento
+let titulo = document.getElementById("meuTitulo");
+
+// Mudar texto
+titulo.textContent = "Novo Título";
+
+// Mudar HTML
+titulo.innerHTML = "&lt;strong&gt;Título em Negrito&lt;/strong&gt;";
+
+// Mudar classe
+titulo.classList.add("destaque");
+titulo.classList.remove("hidden");
+
+// Mudar estilo
+titulo.style.color = "blue";
+titulo.style.fontSize = "30px";</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>8️⃣ Eventos - Responder a Ações do Usuário</h2>
+        <p><strong>Responder a cliques:</strong></p>
+        <pre><code>// HTML
+&lt;button id="meuBotao"&gt;Clique aqui&lt;/button&gt;
+
+// JavaScript
+let botao = document.getElementById("meuBotao");
+botao.addEventListener("click", function() {
+    console.log("Botão foi clicado!");
+    alert("Você clicou!");
+});</code></pre>
+        
+        <p><strong>Eventos comuns:</strong></p>
+        <ul>
+            <li><code>click</code> - Clique do mouse</li>
+            <li><code>submit</code> - Envio de formulário</li>
+            <li><code>change</code> - Mudança em input</li>
+            <li><code>mouseover</code> - Mouse sobre elemento</li>
+            <li><code>keypress</code> - Tecla pressionada</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>9️⃣ Exemplo Prático - Calculadora Simples</h2>
+        <p><strong>HTML:</strong></p>
+        <pre><code>&lt;input type="number" id="num1" placeholder="Número 1"&gt;
+&lt;input type="number" id="num2" placeholder="Número 2"&gt;
+&lt;button id="somar"&gt;Somar&lt;/button&gt;
+&lt;p id="resultado"&gt;&lt;/p&gt;</code></pre>
+        
+        <p><strong>JavaScript:</strong></p>
+        <pre><code>document.getElementById("somar").addEventListener("click", function() {
+    let n1 = parseFloat(document.getElementById("num1").value);
+    let n2 = parseFloat(document.getElementById("num2").value);
+    let soma = n1 + n2;
+    document.getElementById("resultado").textContent = "Resultado: " + soma;
+});</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>🔟 Arrays e Métodos Úteis</h2>
+        <pre><code>let numeros = [1, 2, 3, 4, 5];
+
+// Adicionar elemento
+numeros.push(6);  // [1, 2, 3, 4, 5, 6]
+
+// Remover elemento
+numeros.pop();    // Remove o último
+
+// Procurar elemento
+let existe = numeros.includes(3);  // true
+
+// Transformar array
+let dobrados = numeros.map(x => x * 2);
+
+// Filtrar array
+let pares = numeros.filter(x => x % 2 === 0);</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>✨ Dicas e Boas Práticas</h2>
+        <ul>
+            <li>✅ Use nomes descritivos para variáveis</li>
+            <li>✅ Coloque scripts ao final do body</li>
+            <li>✅ Use <code>const</code> por padrão, <code>let</code> quando necessário</li>
+            <li>✅ Sempre valide dados de entrada</li>
+            <li>✅ Use console.log() para debug</li>
+            <li>✅ Deixe o código limpo e organizado</li>
+            <li>✅ Use arrow functions (=>) quando possível</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🚀 Próximo Passo: Projeto Final</h2>
+        <p>Agora você sabe HTML, CSS e JavaScript! Hora de colocar tudo em prática com um projeto real!</p>
+        <p><a href="projeto.html" class="btn">Ir para Projeto Final →</a></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
